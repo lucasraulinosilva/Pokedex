@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Pokédex</title>
+</head>
+
+<body>
+
+    <h6 id="teste"></h6>
+
+    <div id="centro" class="container col-7 mt-5">
+        <div id="caixa">
+            <div id="caixaImagem" class="text-center">
+                <img src="" alt="" class="rounded mt-5">
+            </div>
+            <div id="stats1" class="mt-4">
+                <div id="nome" class="d-flex justify-content-start">
+                    <div>
+                        <img id="miniPokemon" src="" alt="" class="img-fluid mr-5">
+                    </div>
+                    <h4 id="nomePokemonStats" class="text-capitalize mt-4"></h4>
+                </div>
+                <div id="tipo" class="d-flex justify-content-start">
+                    <h6>Tipo(s): </h6>
+                    <p id="tipoPokemon1" class="text-uppercase"></p>
+                    <p id="tipoPokemon2" class="text-uppercase"></p>
+                </div>
+                <div id="habilidades" class="d-flex justify-content-start">
+                    <h6>Habilidades: </h6>
+                    <p id="habilidadesPokemon"></p>
+                </div>
+            </div>
+            <div id="stats2">
+                <h6>Status</h6>
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>HP</td>
+                                <td id="hp"></td>
+                                <td style="width:200px"><div id="barraHp"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Attack</td>
+                                <td id="attack"></td>
+                                <td style="width:200px"><div id="barraAtk"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Defense</td>
+                                <td id="defense"></td>
+                                <td style="width:200px"><div id="barraDef"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Atk</td>
+                                <td id="spAtk"></td>
+                                <td style="width:200px"><div id="barraSpAtk"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Def</td>
+                                <td id="spDef"></td>
+                                <td style="width:200px"><div id="barraSpDef"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Speed</td>
+                                <td id="speed"></td>
+                                <td style="width:200px"><div id="barraSpeed"></div></td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td id="total"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container col-7 mt-2 mb-5" id="tabelinha">
+        <div>
+            <input type="text" id="nomePokemon">
+            <input type="button" id="botao" value="Pesquisar">
+        </div>
+        <table class="table table-hover table-borderless" id="tabelaListaPokemonsMds">
+            <thead>
+            </thead>
+            <tbody id="listaPokemons" class="tbody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script1.js"></script>
+
+</body>
+
+</html>

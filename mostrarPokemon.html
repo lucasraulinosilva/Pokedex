@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <ul class="nav nav-underline mt-3 ms-4">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Filtro</a>
+        </li>
+      </ul>
+
+    <div class="container-fluid mostrarPokemon">
+        <div class="row">
+            <div class="col-6 p-5 mt-5">
+                <div class="container itens d-flex align-left">
+                    <h1 id="nomePokemon" class="m-2 text-capitalize"></h1>
+                    <p id="idPokemon" class="mt-4 m-1"></p>
+                </div>
+                <img src="" alt="" id="miniPokemon" class="img-fluid ms-3 mt-4">
+                <img src="" alt="" id="imgPokemon" class="img-fluid mt-2">
+                <div class="container d-flex itens align-left mt-2">
+                    <p id="tipo1" class="tipoPokemon3 me-3 text-capitalize"></p>
+                    <p id="tipo2" class="tipoPokemon3 text-capitalize"></p>
+                </div>
+                <p id="habilidadesPokemon" class="text-capitalize"></p>
+                <div id="stats2">
+                    <h6>Status</h6>
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>HP</td>
+                                <td id="hp"></td>
+                                <td style="width:200px">
+                                    <div id="barraHp"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Attack</td>
+                                <td id="attack"></td>
+                                <td style="width:200px">
+                                    <div id="barraAtk"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Defense</td>
+                                <td id="defense"></td>
+                                <td style="width:200px">
+                                    <div id="barraDef"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Atk</td>
+                                <td id="spAtk"></td>
+                                <td style="width:200px">
+                                    <div id="barraSpAtk"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Sp. Def</td>
+                                <td id="spDef"></td>
+                                <td style="width:200px">
+                                    <div id="barraSpDef"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Speed</td>
+                                <td id="speed"></td>
+                                <td style="width:200px">
+                                    <div id="barraSpeed"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Total</td>
+                                <td id="total"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-6 p-5 evolucoes mt-5">
+                <h1>Evoluções</h1>
+                <div class="d-flex flex-row">
+                    <img src="" alt="" id="miniPokemon1" class="me-2 ms-2">
+                    <a id="seta1" class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic" href=""></a>
+                    <img src="" alt="" id="miniPokemon2" class="me-2 ms-2">
+                    <a id="seta2" class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic" href=""></a>
+                    <img src="" alt="" id="miniPokemon3" class="me-2 ms-2">
+                    <a id="seta3" class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic" href=""></a>
+                </div>
+                <div class="container tabelinha2">
+                    <table class="table table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Moves</th>
+                                <th>Power</th>
+                                <th>Accuracy</th>
+                                <th>PP</th>
+                            </tr>
+                        </thead>
+                        <tbody id="listaAtaques" class="tbody">
+    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+
+</body>
+
+</html>

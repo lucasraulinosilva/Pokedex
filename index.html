@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <title>Pokédex</title>
+</head>
+
+<body>
+
+    <ul class="nav nav-underline mt-3 ms-4">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Filtro</a>
+        </li>
+      </ul>
+
+    <div class="container-fluid mt-5 filtro">
+        <div class="container col-8 row">
+            <div class="col-5">
+                <h1>Filtros</h1>
+                <p>Gerações</p>
+                <form action="" class="d-flex d-flex justify-content-around">
+                    <input type="radio" name="generations" class="btn-check" id="genI" autocomplete="off" value="genI">
+                    <label class="btn btn-outline-dark" for="genI">I</label>
+                    <input type="radio" name="generations" class="btn-check" id="genII" autocomplete="off" value="genII">
+                    <label class="btn btn-outline-dark" for="genII">II</label>
+                    <input type="radio" name="generations" class="btn-check" id="genIII" autocomplete="off" value="genIII">
+                    <label class="btn btn-outline-dark" for="genIII">III</label>
+                    <input type="radio" name="generations" class="btn-check" id="genIV" autocomplete="off" value="genIV">
+                    <label class="btn btn-outline-dark" for="genIV">IV</label>
+                    <input type="radio" name="generations" class="btn-check" id="genV" autocomplete="off" value="genV">
+                    <label class="btn btn-outline-dark" for="genV">V</label>
+                    <input type="radio" name="generations" class="btn-check" id="genVI" autocomplete="off" value="genVI">
+                    <label class="btn btn-outline-dark" for="genVI">VI</label>
+                    <input type="radio" name="generations" class="btn-check" id="genVII" autocomplete="off" value="genVII">
+                    <label class="btn btn-outline-dark" for="genVII">VII</label>
+                    <input type="radio" name="generations" class="btn-check" id="nationalDex" autocomplete="off" value="nationalDex">
+                    <label class="btn btn-outline-dark" for="nationalDex">National Dex</label>
+                </form>
+                <button class="btn btn-primary mt-3" id="filtrar">Filtrar</button>
+            </div>
+            <div class="col-7">
+                <div class="container exibirPokemons">
+                    <h1>Pokémons</h1>
+                <div class="mt-5 form-floating">
+                    <input type="text" id="nomePokemon" class="form-control">
+                    <label for="nomePokemon">Pokemon name</label>
+                </div>
+                <div class="container col-7 mt-5 mb-5" id="tabelinha">
+                    <table class="table table-hover table-borderless" id="tabelaListaPokemonsMds">
+                        <thead>
+                        </thead>
+                        <tbody id="listaPokemons" class="tbody">
+                        </tbody>
+                    </table>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

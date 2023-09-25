@@ -1,0 +1,73 @@
+#caixa {
+    width: auto;
+    height: auto;
+}
+
+#caixaImagem {
+    width: 150px;
+    height: auto;
+}
+
+#stats1 h6 {
+    float: left;
+    margin-top: 2px;
+}
+
+#stats1 p {
+    float: left;
+    margin-left: 10px;
+}
+
+#tipo,
+#nome,
+#habilidades {
+    margin: 10px;
+}
+
+#tipo h6 {
+    margin-top: 5px;
+}
+
+#stats2 h6 {
+    margin-left: 12px;
+}
+
+#barraHp,
+#barraAtk,
+#barraDef,
+#barraSpDef,
+#barraSpAtk,
+#barraSpeed {
+    padding: 5px;
+    height: 10px;
+    display: flex;
+}
+
+#tipoPokemon1,
+#tipoPokemon2,
+.tipoPokemon3 {
+    padding: 7px !important;
+    color: white;
+    border-radius: 15px;
+    width: 120px;
+    text-align: center;
+}
+
+#tabelinha {
+    height: 400px;
+    overflow-y:auto;
+}
+
+.linha {
+    cursor: pointer;
+}
+
+.borda1 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.borda2 {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}

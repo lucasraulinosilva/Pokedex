@@ -1,0 +1,86 @@
+.filtro p {
+    color: rgb(121, 121, 121);
+}
+
+#tipoPokemon1,
+#tipoPokemon2,
+.tipoPokemon3,
+.tipoPokemon4 {
+    padding: 7px !important;
+    color: white !important;
+    border-radius: 15px;
+    width: 120px;
+    text-align: center;
+}
+
+#tabelinha {
+    height: 700px;
+    width: auto;
+    overflow-y:auto;
+}
+
+.linha {
+    cursor: pointer;
+}
+
+.borda1 {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.borda2 {
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.exibirPokemons {
+    margin-left: 50px;
+}
+
+.mostrarPokemon {
+    border-radius: 15px;
+    height: 700px;
+}
+
+#barraHp,
+#barraAtk,
+#barraDef,
+#barraSpDef,
+#barraSpAtk,
+#barraSpeed {
+    padding: 5px;
+    height: 10px;
+    display: flex;
+    border-radius: 15px;
+    margin-top: 7px;
+}
+
+.evolucoes div{
+    height: 30px;
+    margin-top: 70px;
+}
+
+.evolucoes {
+    height: 700px;
+}
+
+.evolucoes h1 {
+    margin: 8px;
+}
+
+.evolucoes a {
+    color: black;
+}
+
+.tabelinha2 {
+    height: 400px !important;
+    width: auto;
+    overflow-y:auto;
+}
+
+.tipoPokemon5 {
+    padding: 7px !important;
+    border-radius: 15px;
+    width: 120px;
+    text-align: center;
+}
