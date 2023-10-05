@@ -29,6 +29,10 @@ var pokemonsNumber = 0;
 
 $("#filtrar").click(function(){
 
+    $(".loading2").show();
+
+    setTimeout(function(){ $(".loading2").hide(); $("#tabelinha").show();}, 1500);
+
     var geracao = document.getElementsByName("generations");
 
     for ( var i = 0; i < geracao.length; i ++) {
@@ -147,6 +151,9 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
 };
 
 // start functions
+
+$("#tabelinha").hide();
+$(".loading2").hide();
 
 $(document).ready(function(){
     $("#tabelaListaPokemonsMds > tbody > tr").on('click', function() {

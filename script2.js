@@ -33,6 +33,10 @@ var numeroAtaques = 0;
 
 // functions
 
+$(".mostrarPokemon").hide();
+
+setTimeout(function(){ $(".loading").hide(); $(".mostrarPokemon").show();}, 1500);
+
 function mostrarPokemon() {
 
     $.get("https://pokeapi.co/api/v2/pokemon/" + idPokemon + "/", function (pokemon) {
