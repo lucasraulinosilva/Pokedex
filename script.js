@@ -24,6 +24,7 @@ const colours = {
 
 var listaPokemons = document.getElementById("listaPokemons");
 var pokemonsNumber = 0;
+var p = 0;
 
 // functions
 
@@ -31,7 +32,9 @@ $("#filtrar").click(function(){
 
     $(".loading2").show();
 
-    setTimeout(function(){ $(".loading2").hide(); $("#tabelinha").show();}, 1500);
+    const myInterval = setInterval(progress_bar, 0o5);
+
+    setTimeout( function(){clearInterval(myInterval);$(".loading2").hide(); $("#tabelinha").show();}, 1500);
 
     var geracao = document.getElementsByName("generations");
 
@@ -149,6 +152,12 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
     });
 
 };
+
+function progress_bar() {
+    $(".progress-bar").attr("style", "width:"+p+"%;");
+    p = p + 1;
+}
+
 
 // start functions
 

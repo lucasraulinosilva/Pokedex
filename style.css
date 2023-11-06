@@ -88,3 +88,8 @@
 .loading {
     margin-top: 150px;
 }
+
+.dropdown-toggle {
+    background-color: #212529 !important;
+    color: white;
+}
