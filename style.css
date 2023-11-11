@@ -93,3 +93,22 @@
     background-color: #212529 !important;
     color: white;
 }
+
+@media (max-width: 576px) { 
+
+    .exibirPokemons {
+        margin-left: 0px;
+        padding: 0 !important;
+    }
+
+    .linha {
+        width: 10px !important;
+    }
+
+    #tabelinha,
+    .col-sm-7,
+    .evolucoes {
+        padding: 0 !important;
+    }
+
+ }
