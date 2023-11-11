@@ -32,9 +32,22 @@ $("#filtrar").click(function(){
 
     $(".loading2").show();
 
-    const myInterval = setInterval(progress_bar, 0o5);
+    progress_bar();
 
-    setTimeout( function(){clearInterval(myInterval);$(".loading2").hide(); $("#tabelinha").show();}, 1500);
+    const myInterval = setInterval(progress_bar, 50);
+
+    function progress_bar() {
+        $(".progress-bar").attr("style", "width:"+p+"%;");
+        p = p + 1;
+    
+        if ( p == 101 ) {
+            clearInterval(myInterval);
+
+            setTimeout( function(){$(".loading2").hide(); $("#tabelinha").show();}, 1500);
+        }
+    }
+
+    //setTimeout( function(){clearInterval(myInterval);$(".loading2").hide(); $("#tabelinha").show();}, 1500);
 
     var geracao = document.getElementsByName("generations");
 
@@ -152,11 +165,6 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
     });
 
 };
-
-function progress_bar() {
-    $(".progress-bar").attr("style", "width:"+p+"%;");
-    p = p + 1;
-}
 
 
 // start functions
