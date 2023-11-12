@@ -118,7 +118,7 @@
 }
 
 .texto-claro {
-    color: white !important;
+    color: #f2faff !important;
 }
 
 @media (max-width: 576px) { 

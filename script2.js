@@ -65,7 +65,7 @@ $(".modo-noturno").click(function(){
         $("table tbody tr td").addClass("texto-claro");
         $("table thead tr th").addClass("background-noturno").addClass("texto-claro");
 
-        $(".icone-um").attr("src", "modo-noturno.png");
+        $(".icone-um").attr("src", "modo-noturno2.png");
         $(".icone-dois").attr("src", "brilho-do-sol.png");
 
         modo_noturno = true;

@@ -197,7 +197,7 @@ $(".modo-noturno").click(function(){
         $("#listaPokemons tr td").addClass("background-noturno");
         $("#listaPokemons tr td p").addClass("texto-claro");
 
-        $(".icone-um").attr("src", "modo-noturno.png");
+        $(".icone-um").attr("src", "modo-noturno2.png");
         $(".icone-dois").attr("src", "brilho-do-sol.png");
 
         modo_noturno = true;
