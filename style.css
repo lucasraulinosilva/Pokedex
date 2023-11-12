@@ -94,6 +94,33 @@
     color: white;
 }
 
+.dropdown-item {
+    --bs-dropdown-link-active-bg: #ffffff;
+}
+
+.icone-um {
+    width: 30px;
+}
+
+.icone-dois {   
+    width: 70px;
+}
+
+.dropdown-menu,
+.dropdown-menu li,
+.dropdown-menu .show {
+    width: auto !important;
+    --bs-dropdown-min-width: 0;
+}
+
+.background-noturno {
+    background-color: #0d1117 !important;
+}
+
+.texto-claro {
+    color: white !important;
+}
+
 @media (max-width: 576px) { 
 
     .exibirPokemons {

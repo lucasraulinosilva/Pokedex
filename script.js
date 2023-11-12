@@ -25,6 +25,7 @@ const colours = {
 var listaPokemons = document.getElementById("listaPokemons");
 var pokemonsNumber = 0;
 var p = 0;
+var modo_noturno = false;
 
 // functions
 
@@ -43,7 +44,7 @@ $("#filtrar").click(function(){
         if ( p == 101 ) {
             clearInterval(myInterval);
 
-            setTimeout( function(){$(".loading2").hide(); $("#tabelinha").show();}, 1500);
+            setTimeout( function(){$(".loading2").hide(); $("#tabelinha").show();}, 1000);
         }
     }
 
@@ -99,7 +100,6 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
         let spriteListaPokemons = document.createElement("img");
         let nomeListaPokemons = document.createElement("p");
 
-        nomeListaPokemons.classList = "text-capitalize mt-4";
         tdListaPokemons1.appendChild(spriteListaPokemons);
         tdListaPokemons.appendChild(nomeListaPokemons);
         tdListaPokemons2.appendChild(tipoPokemonLista1);
@@ -111,8 +111,16 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
         tipoPokemonLista2.setAttribute("id", initialCount + "tipo2");
         tipoPokemonLista1.setAttribute("class", "tipoPokemon3 text-capitalize");
         tipoPokemonLista2.setAttribute("class", "tipoPokemon3 text-capitalize");
-        tdListaPokemons1.setAttribute("class", "borda1");
-        tdListaPokemons2.setAttribute("class", "borda2");
+        if ( modo_noturno == true ) {
+            tdListaPokemons.setAttribute("class", "background-noturno");
+            tdListaPokemons1.setAttribute("class", "borda1 background-noturno");
+            tdListaPokemons2.setAttribute("class", "borda2 background-noturno");
+            nomeListaPokemons.setAttribute("class", "text-capitalize mt-4 texto-claro");
+        } else {
+            tdListaPokemons1.setAttribute("class", "borda1");
+            tdListaPokemons2.setAttribute("class", "borda2");
+            nomeListaPokemons.setAttribute("class", "text-capitalize mt-4");
+        }
         trListaPokemons.appendChild(tdListaPokemons1);
         trListaPokemons.appendChild(tdListaPokemons);
         trListaPokemons.appendChild(tdListaPokemons2);
@@ -120,7 +128,6 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
         trListaPokemons.setAttribute("class", "linha");
         trListaPokemons.setAttribute("value", initialCount);
         listaPokemons.appendChild(trListaPokemons);
-
 
        $.get("https://pokeapi.co/api/v2/pokemon/" + initialCount + "/", function (batata) {
 
@@ -166,6 +173,36 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
 
 };
 
+$(".modo-noturno").click(function(){
+
+    if( modo_noturno == true ) {
+
+        $("body").removeClass("background-noturno");
+        $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
+        $("a").removeClass("texto-claro");
+        $("h1").removeClass("texto-claro");
+        $("#listaPokemons tr td").removeClass("background-noturno");
+        $("#listaPokemons tr td p").removeClass("texto-claro");
+
+        $(".icone-um").attr("src", "brilho-do-sol.png");
+        $(".icone-dois").attr("src", "modo-noturno.png");
+
+        modo_noturno = false;
+    } else {
+
+        $("body").addClass("background-noturno");
+        $(".list-group-item").addClass("background-noturno").addClass("texto-claro");
+        $("a").addClass("texto-claro");
+        $("h1").addClass("texto-claro");
+        $("#listaPokemons tr td").addClass("background-noturno");
+        $("#listaPokemons tr td p").addClass("texto-claro");
+
+        $(".icone-um").attr("src", "modo-noturno.png");
+        $(".icone-dois").attr("src", "brilho-do-sol.png");
+
+        modo_noturno = true;
+    }
+});
 
 // start functions
 
