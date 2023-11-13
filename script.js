@@ -26,6 +26,9 @@ var listaPokemons = document.getElementById("listaPokemons");
 var pokemonsNumber = 0;
 var p = 0;
 
+var n1 = 0;
+var n2 = 0;
+
 //localStorage.clear();
 
 var modo_noturno = localStorage.modo_noturno;
@@ -41,6 +44,10 @@ if (!modo_noturno) {
         $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
         $("a").removeClass("texto-claro");
         $("h1").removeClass("texto-claro");
+        $(".accordion-body").removeClass("background-noturno");
+        $(".accordion-button").removeClass("background-noturno").removeClass("texto-claro");
+        $(".accordion-header").removeClass("background-noturno");
+        $(".accordion-item").removeClass("background-noturno");
         $("#listaPokemons tr td").removeClass("background-noturno");
         $("#listaPokemons tr td p").removeClass("texto-claro");
 
@@ -53,6 +60,10 @@ if (!modo_noturno) {
         $(".list-group-item").addClass("background-noturno").addClass("texto-claro");
         $("a").addClass("texto-claro");
         $("h1").addClass("texto-claro");
+        $(".accordion-body").addClass("background-noturno");
+        $(".accordion-button").addClass("background-noturno").addClass("texto-claro");
+        $(".accordion-header").addClass("background-noturno");
+        $(".accordion-item").addClass("background-noturno");
         $("#listaPokemons tr td").addClass("background-noturno");
         $("#listaPokemons tr td p").addClass("texto-claro");
 
@@ -65,6 +76,8 @@ if (!modo_noturno) {
 
 $("#filtrar").click(function(){
 
+    var geracao = document.getElementsByName("generations");
+
     $(".loading2").show();
 
     progress_bar();
@@ -72,19 +85,29 @@ $("#filtrar").click(function(){
     const myInterval = setInterval(progress_bar, 50);
 
     function progress_bar() {
+
+        $("#tabelinha").hide();
+
         $(".progress-bar").attr("style", "width:"+p+"%;");
         p = p + 1;
     
         if ( p == 101 ) {
             clearInterval(myInterval);
 
-            setTimeout( function(){$(".loading2").hide(); $("#tabelinha").show();}, 1000);
+            for ( var l = 0; l < geracao.length; l ++) { 
+                if (!geracao[l].checked) {
+                    setTimeout( function(){$(".loading2").hide(); $(".progress-bar").attr("style", "width:"+p+"%;");}, 1000);
+                } else {
+                    setTimeout( function(){$(".loading2").hide(); $("#tabelinha").show(); $(".progress-bar").attr("style", "width:"+p+"%;");}, 1000);
+                }
+            }
+
+            p = 0;
         }
+
     }
 
     //setTimeout( function(){clearInterval(myInterval);$(".loading2").hide(); $("#tabelinha").show();}, 1500);
-
-    var geracao = document.getElementsByName("generations");
 
     for ( var i = 0; i < geracao.length; i ++) {
             
@@ -128,6 +151,20 @@ $("#filtrar").click(function(){
 
 function tabelaPokemons(pokemonsNumber, initialCount) {
 
+    var tipoPokemonFiltro = document.getElementsByName("types");
+    var tipoPokemonFiltro2;
+    n1 = pokemonsNumber;
+    n2 = initialCount;
+
+    for ( var i = 0; i < tipoPokemonFiltro .length; i ++) {
+            
+        if( tipoPokemonFiltro[i].checked ) {
+            tipoPokemonFiltro2 = tipoPokemonFiltro[i].value;
+            console.log(tipoPokemonFiltro2);
+        }
+
+    }
+
     while ( initialCount < pokemonsNumber ){
 
         let trListaPokemons = document.createElement("tr");
@@ -147,6 +184,7 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
         spriteListaPokemons.classList = "spritesGrandes";
         nomeListaPokemons.setAttribute("id", initialCount + "nome");
         tipoPokemonLista1.setAttribute("id", initialCount + "tipo1");
+        tipoPokemonLista1.setAttribute("value", initialCount + "tipo1");
         tipoPokemonLista2.setAttribute("id", initialCount + "tipo2");
         tipoPokemonLista1.setAttribute("class", "tipoPokemon3 text-capitalize");
         tipoPokemonLista2.setAttribute("class", "tipoPokemon3 text-capitalize");
@@ -175,6 +213,8 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
             idPokemon = batata.id;
             tipoPokemon0 = batata.types["0"].type.name;
             tipoPokemon1 = "";
+
+            $("#" + idPokemon).attr("tipo", batata.types["0"].type.name);
         
             if (!batata.types[1]){
                 $("#" + idPokemon + "tipo2").html("");
@@ -194,6 +234,10 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
             $("#" + idPokemon + "img").attr("src", imagemPokemon);
             $("#" + idPokemon).attr("nomePokemon", batata.name);
 
+            /*if ( tipoPokemonFiltro2 != tipoPokemon0 ) {
+                $("#" + initialCount).remove();
+            }*/
+
         });
 
         initialCount++;
@@ -210,6 +254,28 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
         });
     });
 
+    if (tipoPokemonFiltro2 == null) {
+
+    } else {
+
+        setTimeout(function(){
+
+            console.log(n1, n2);
+            
+            while ( n2 < n1 ) {
+                if ( $("#"+ n2).attr("tipo") == tipoPokemonFiltro2 ) {
+            
+                } else {
+                    $("#"+ n2).remove();
+                }
+
+                n2++;
+            }
+        
+        
+        }, 3000);
+    }
+
 };
 
 $(".modo-noturno").click(function(){
@@ -220,6 +286,10 @@ $(".modo-noturno").click(function(){
         $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
         $("a").removeClass("texto-claro");
         $("h1").removeClass("texto-claro");
+        $(".accordion-body").removeClass("background-noturno");
+        $(".accordion-button").removeClass("background-noturno").removeClass("texto-claro");
+        $(".accordion-header").removeClass("background-noturno");
+        $(".accordion-item").removeClass("background-noturno");
         $("#listaPokemons tr td").removeClass("background-noturno");
         $("#listaPokemons tr td p").removeClass("texto-claro");
 
@@ -235,6 +305,10 @@ $(".modo-noturno").click(function(){
         $(".list-group-item").addClass("background-noturno").addClass("texto-claro");
         $("a").addClass("texto-claro");
         $("h1").addClass("texto-claro");
+        $(".accordion-body").addClass("background-noturno");
+        $(".accordion-button").addClass("background-noturno").addClass("texto-claro");
+        $(".accordion-header").addClass("background-noturno");
+        $(".accordion-item").addClass("background-noturno");
         $("#listaPokemons tr td").addClass("background-noturno");
         $("#listaPokemons tr td p").addClass("texto-claro");
 

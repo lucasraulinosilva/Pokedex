@@ -38,65 +38,200 @@
         <div class="container col-sm-8 row">
             <div class="col-sm-5">
                 <h1>Filtros</h1>
-                <p>Gerações</p>
-                <form action="" class="d-flex">
-                    <div class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genI" value="genI">
-                                <label class="form-check-label ms-3" for="genI">Generation I</label>
+                <div class="accordion accordion-flush" id="filtroPokemon">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#geracoes" aria-expanded="false" aria-controls="geracoes"> 
+                                Gerações
+                            </button>
+                        </h2>
+                        <div id="geracoes" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <form action="" class="d-flex">
+                                    <div class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genI" value="genI">
+                                                <label class="form-check-label ms-3" for="genI">Generation I</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genII"
+                                                    value="genII">
+                                                <label class="form-check-label ms-3" for="genII">Generation II</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genIII"
+                                                    value="genIII">
+                                                <label class="form-check-label ms-3" for="genIII">Generation III</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genIV"
+                                                    value="genIV">
+                                                <label class="form-check-label ms-3" for="genIV">Generation IV</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genV" value="genV">
+                                                <label class="form-check-label ms-3" for="genV">Generation V</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genVI"
+                                                    value="genVI">
+                                                <label class="form-check-label ms-3" for="genI">Generation VI</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="genVII"
+                                                    value="genVII">
+                                                <label class="form-check-label ms-3" for="genI">Generation VII</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input" id="nationalDex"
+                                                    value="nationalDex">
+                                                <label class="form-check-label ms-3" for="nationalDex">National Dex</label>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </form>
                             </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genII"
-                                    value="genII">
-                                <label class="form-check-label ms-3" for="genII">Generation II</label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genIII"
-                                    value="genIII">
-                                <label class="form-check-label ms-3" for="genIII">Generation III</label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genIV"
-                                    value="genIV">
-                                <label class="form-check-label ms-3" for="genIV">Generation IV</label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genV" value="genV">
-                                <label class="form-check-label ms-3" for="genV">Generation V</label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genVI"
-                                    value="genVI">
-                                <label class="form-check-label ms-3" for="genI">Generation VI</label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="genVII"
-                                    value="genVII">
-                                <label class="form-check-label ms-3" for="genI">Generation VII</label>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="form-check">
-                                <input type="radio" name="generations" class="form-check-input" id="nationalDex"
-                                    value="nationalDex">
-                                <label class="form-check-label ms-3" for="nationalDex">National Dex</label>
-                            </div>
-                        </li>
+                        </div>
                     </div>
-                </form>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#tiposFiltro" aria-expanded="false" aria-controls="tiposFiltro"> 
+                                Tipos
+                            </button>
+                        </h2>
+                        <div id="tiposFiltro" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <form action="" class="d-flex">
+                                    <div class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="normal" value="normal">
+                                                <label class="form-check-label ms-3" for="normal">Normal</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="fire" value="fire">
+                                                <label class="form-check-label ms-3" for="fire">Fire</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="water" value="water">
+                                                <label class="form-check-label ms-3" for="water">Water</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="grass" value="grass">
+                                                <label class="form-check-label ms-3" for="grass">Grass</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="eletric" value="eletric">
+                                                <label class="form-check-label ms-3" for="eletric">Eletric</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="ice" value="ice">
+                                                <label class="form-check-label ms-3" for="ice">Ice</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="fighting" value="fighting">
+                                                <label class="form-check-label ms-3" for="fighting">Fighting</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="poison" value="poison">
+                                                <label class="form-check-label ms-3" for="poison">Poison</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="ground" value="ground">
+                                                <label class="form-check-label ms-3" for="ground">Ground</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="rock" value="rock">
+                                                <label class="form-check-label ms-3" for="rock">Rock</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="flying" value="flying">
+                                                <label class="form-check-label ms-3" for="flying">Flying</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="psychic" value="psychic">
+                                                <label class="form-check-label ms-3" for="psychic">Psychic</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="bug" value="bug">
+                                                <label class="form-check-label ms-3" for="bug">Bug</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="ghost" value="ghost"> 
+                                                <label class="form-check-label ms-3" for="ghost">Ghost</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="dragon" value="dragon">
+                                                <label class="form-check-label ms-3" for="dragon">Dragon</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="dark" value="dark">
+                                                <label class="form-check-label ms-3" for="dark">Dark</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="stell" value="stell">
+                                                <label class="form-check-label ms-3" for="stell">Stell</label> 
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="types" class="form-check-input" id="fairy" value="fairy">
+                                                <label class="form-check-label ms-3" for="fairy">Fairy</label> 
+                                            </div>
+                                        </li>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="d-grid gap-2 col-sm-3">
                     <button class="btn btn-primary mt-3" id="filtrar">Filtrar</button>
                 </div>
