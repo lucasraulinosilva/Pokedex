@@ -33,11 +33,14 @@ var numeroAtaques = 0;
 var modo_noturno = false;
 var p = 0;
 
-// functions
+var modo_noturno = localStorage.modo_noturno;
+modo_noturno = localStorage["modo_noturno"];
 
-$(".modo-noturno").click(function(){
-
-    if( modo_noturno == true ) {
+if (!modo_noturno) {
+    modo_noturno = "claro";
+    localStorage.modo_noturno = modo_noturno;
+} else {
+    if( modo_noturno == "claro" ) {
 
         $("body").removeClass("background-noturno");
         $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
@@ -52,7 +55,46 @@ $(".modo-noturno").click(function(){
         $(".icone-um").attr("src", "brilho-do-sol.png");
         $(".icone-dois").attr("src", "modo-noturno.png");
 
-        modo_noturno = false;
+    } else {
+
+        $("body").addClass("background-noturno");
+        $(".list-group-item").addClass("background-noturno").addClass("texto-claro");
+        $("a").addClass("texto-claro");
+        $("h1").addClass("texto-claro");
+        $("p").addClass("texto-claro");
+        $("h6").addClass("texto-claro");
+
+        setTimeout( function(){        $("table tbody tr td").addClass("background-noturno");
+        $("table tbody tr td").addClass("texto-claro");
+        $("table thead tr th").addClass("background-noturno").addClass("texto-claro");}, 2000);
+
+        $(".icone-um").attr("src", "modo-noturno2.png");
+        $(".icone-dois").attr("src", "brilho-do-sol.png");
+    }
+}
+
+// functions
+
+$(".modo-noturno").click(function(){
+
+    if( modo_noturno == "noturno" ) {
+
+        $("body").removeClass("background-noturno");
+        $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
+        $("a").removeClass("texto-claro");
+        $("h1").removeClass("texto-claro");
+        $("p").removeClass("texto-claro");
+        $("h6").removeClass("texto-claro");
+        $("table tbody tr td").removeClass("background-noturno");
+        $("table tbody tr td").removeClass("texto-claro");
+        $("table thead tr th").removeClass("background-noturno").removeClass("texto-claro");
+
+        $(".icone-um").attr("src", "brilho-do-sol.png");
+        $(".icone-dois").attr("src", "modo-noturno.png");
+
+        modo_noturno = "claro";
+        localStorage.modo_noturno = modo_noturno;
+
     } else {
 
         $("body").addClass("background-noturno");
@@ -68,7 +110,8 @@ $(".modo-noturno").click(function(){
         $(".icone-um").attr("src", "modo-noturno2.png");
         $(".icone-dois").attr("src", "brilho-do-sol.png");
 
-        modo_noturno = true;
+        modo_noturno = "noturno";
+        localStorage.modo_noturno = modo_noturno;
     }
 });
 

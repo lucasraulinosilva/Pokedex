@@ -25,7 +25,41 @@ const colours = {
 var listaPokemons = document.getElementById("listaPokemons");
 var pokemonsNumber = 0;
 var p = 0;
-var modo_noturno = false;
+
+//localStorage.clear();
+
+var modo_noturno = localStorage.modo_noturno;
+modo_noturno = localStorage["modo_noturno"];
+
+if (!modo_noturno) {
+    modo_noturno = "claro";
+    localStorage.modo_noturno = modo_noturno;
+} else {
+    if( modo_noturno == "claro" ) {
+
+        $("body").removeClass("background-noturno");
+        $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
+        $("a").removeClass("texto-claro");
+        $("h1").removeClass("texto-claro");
+        $("#listaPokemons tr td").removeClass("background-noturno");
+        $("#listaPokemons tr td p").removeClass("texto-claro");
+
+        $(".icone-um").attr("src", "brilho-do-sol.png");
+        $(".icone-dois").attr("src", "modo-noturno.png");
+
+    } else {
+
+        $("body").addClass("background-noturno");
+        $(".list-group-item").addClass("background-noturno").addClass("texto-claro");
+        $("a").addClass("texto-claro");
+        $("h1").addClass("texto-claro");
+        $("#listaPokemons tr td").addClass("background-noturno");
+        $("#listaPokemons tr td p").addClass("texto-claro");
+
+        $(".icone-um").attr("src", "modo-noturno2.png");
+        $(".icone-dois").attr("src", "brilho-do-sol.png");
+    }
+}
 
 // functions
 
@@ -83,6 +117,11 @@ $("#filtrar").click(function(){
             }
         }
 
+    }
+
+    if ( modo_noturno == "noturno" ) {
+        $("#listaPokemons tr td").addClass("background-noturno");
+        $("#listaPokemons tr td p").addClass("texto-claro");
     }
 
 });
@@ -175,7 +214,7 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
 
 $(".modo-noturno").click(function(){
 
-    if( modo_noturno == true ) {
+    if( modo_noturno == "noturno" ) {
 
         $("body").removeClass("background-noturno");
         $(".list-group-item").removeClass("background-noturno").removeClass("texto-claro");
@@ -187,7 +226,9 @@ $(".modo-noturno").click(function(){
         $(".icone-um").attr("src", "brilho-do-sol.png");
         $(".icone-dois").attr("src", "modo-noturno.png");
 
-        modo_noturno = false;
+        modo_noturno = "claro";
+        localStorage.modo_noturno = modo_noturno;
+
     } else {
 
         $("body").addClass("background-noturno");
@@ -200,7 +241,8 @@ $(".modo-noturno").click(function(){
         $(".icone-um").attr("src", "modo-noturno2.png");
         $(".icone-dois").attr("src", "brilho-do-sol.png");
 
-        modo_noturno = true;
+        modo_noturno = "noturno";
+        localStorage.modo_noturno = modo_noturno;
     }
 });
 
