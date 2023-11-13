@@ -228,6 +228,7 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
                 $("#" + idPokemon + "tipo2").html(tipoPokemon1);
                 $("#" + idPokemon + "tipo1").css("background-color", colours[tipoPokemon0]);
                 $("#" + idPokemon + "tipo2").css("background-color", colours[tipoPokemon1]);
+                $("#" + idPokemon).attr("tipo2", batata.types["1"].type.name);
             }
 
             $("#" + idPokemon + "nome").html(nomePokemon);
@@ -263,7 +264,7 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
             console.log(n1, n2);
             
             while ( n2 < n1 ) {
-                if ( $("#"+ n2).attr("tipo") == tipoPokemonFiltro2 ) {
+                if ( $("#"+ n2).attr("tipo") == tipoPokemonFiltro2 || $("#"+ n2).attr("tipo2") == tipoPokemonFiltro2) {
             
                 } else {
                     $("#"+ n2).remove();
