@@ -156,7 +156,7 @@ function tabelaPokemons(pokemonsNumber, initialCount) {
     n1 = pokemonsNumber;
     n2 = initialCount;
 
-    for ( var i = 0; i < tipoPokemonFiltro .length; i ++) {
+    for ( var i = 0; i < tipoPokemonFiltro .length; i++) {
             
         if( tipoPokemonFiltro[i].checked ) {
             tipoPokemonFiltro2 = tipoPokemonFiltro[i].value;

@@ -51,6 +51,12 @@ if (!modo_noturno) {
         $("table tbody tr td").removeClass("background-noturno");
         $("table tbody tr td").removeClass("texto-claro");
         $("table thead tr th").removeClass("background-noturno").removeClass("texto-claro");
+        $(".accordion-body").removeClass("background-noturno");
+        $(".accordion-button").removeClass("background-noturno").removeClass("texto-claro");
+        $(".accordion-header").removeClass("background-noturno");
+        $(".accordion-item").removeClass("background-noturno");
+
+        setTimeout( function(){ordenarTabela();}, 5000);
 
         $(".icone-um").attr("src", "brilho-do-sol.png");
         $(".icone-dois").attr("src", "modo-noturno.png");
@@ -63,10 +69,14 @@ if (!modo_noturno) {
         $("h1").addClass("texto-claro");
         $("p").addClass("texto-claro");
         $("h6").addClass("texto-claro");
+        $(".accordion-body").addClass("background-noturno");
+        $(".accordion-button").addClass("background-noturno").addClass("texto-claro");
+        $(".accordion-header").addClass("background-noturno");
+        $(".accordion-item").addClass("background-noturno");
 
         setTimeout( function(){        $("table tbody tr td").addClass("background-noturno");
         $("table tbody tr td").addClass("texto-claro");
-        $("table thead tr th").addClass("background-noturno").addClass("texto-claro");}, 2000);
+        $("table thead tr th").addClass("background-noturno").addClass("texto-claro"); ordenarTabela();}, 5000);
 
         $(".icone-um").attr("src", "modo-noturno2.png");
         $(".icone-dois").attr("src", "brilho-do-sol.png");
@@ -85,6 +95,10 @@ $(".modo-noturno").click(function(){
         $("h1").removeClass("texto-claro");
         $("p").removeClass("texto-claro");
         $("h6").removeClass("texto-claro");
+        $(".accordion-body").removeClass("background-noturno");
+        $(".accordion-button").removeClass("background-noturno").removeClass("texto-claro");
+        $(".accordion-header").removeClass("background-noturno");
+        $(".accordion-item").removeClass("background-noturno");
         $("table tbody tr td").removeClass("background-noturno");
         $("table tbody tr td").removeClass("texto-claro");
         $("table thead tr th").removeClass("background-noturno").removeClass("texto-claro");
@@ -103,6 +117,10 @@ $(".modo-noturno").click(function(){
         $("h1").addClass("texto-claro");
         $("p").addClass("texto-claro");
         $("h6").addClass("texto-claro");
+        $(".accordion-body").addClass("background-noturno");
+        $(".accordion-button").addClass("background-noturno").addClass("texto-claro");
+        $(".accordion-header").addClass("background-noturno");
+        $(".accordion-item").addClass("background-noturno");
         $("table tbody tr td").addClass("background-noturno");
         $("table tbody tr td").addClass("texto-claro");
         $("table thead tr th").addClass("background-noturno").addClass("texto-claro");
@@ -199,6 +217,7 @@ function mostrarPokemon() {
         while ( numeroAtaques < pokemon["moves"].length ) {
             let trAtaquesListaPokemon = document.createElement("tr");
             let tdAtaquesListaPokemon = document.createElement("td"); 
+            let tdLevel = document.createElement("td");
             let tdNomeTipoAtaqueListaPokemon = document.createElement("td");
             let tdPoderTipoAtaqueListaPokemon = document.createElement("td");
             let tdPrecisaoTipoAtaqueListaPokemon = document.createElement("td");
@@ -208,9 +227,15 @@ function mostrarPokemon() {
             let poderAtaquePokemon = document.createElement("p");
             let precisaoAtaquePokemon = document.createElement("p");
             let ppAtaquePokemon = document.createElement("p");
+            if (pokemon["moves"][numeroAtaques]["version_group_details"]["0"]["level_learned_at"] == 0 ) {
+                tdLevel.innerHTML = 99;
+            } else {
+                tdLevel.innerHTML = pokemon["moves"][numeroAtaques]["version_group_details"]["0"]["level_learned_at"];
+            }
 
             $.get("https://pokeapi.co/api/v2/move/" + pokemon["moves"][numeroAtaques].move.name + "/", function (ataque){
 
+                trAtaquesListaPokemon.setAttribute("class", ataque.generation.name);    
                 tipoAtaquePokemon1.innerHTML = ataque.type.name;
                 tipoAtaquePokemon2.innerHTML = ataque.damage_class.name;
                 poderAtaquePokemon.innerHTML = ataque.power;
@@ -230,6 +255,7 @@ function mostrarPokemon() {
             
             tdAtaquesListaPokemon.innerHTML = pokemon["moves"][numeroAtaques].move.name;
             tdAtaquesListaPokemon.className = "text-capitalize";
+            trAtaquesListaPokemon.appendChild(tdLevel);
             trAtaquesListaPokemon.appendChild(tdNomeTipoAtaqueListaPokemon);
             trAtaquesListaPokemon.appendChild(tdAtaquesListaPokemon);
             trAtaquesListaPokemon.appendChild(tdPoderTipoAtaqueListaPokemon);
@@ -320,6 +346,80 @@ function barraStats(status, nomeBarra) {
     }
 
     $("#" + nomeBarra).css("background-color", cor);
+}
+
+$("#botao_filtrar_ataques").click(function(){
+
+    var geracao = document.getElementsByName("generations");
+
+    for ( var i = 0; i < geracao.length; i ++) {
+            
+        if( geracao[i].checked ) {
+            console.log(geracao[i].value);
+            if ( geracao[i].value == "generation-i" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-ii");
+                $(".tabelinha2 table tbody tr").remove(".generation-iii");
+                $(".tabelinha2 table tbody tr").remove(".generation-iv");
+                $(".tabelinha2 table tbody tr").remove(".generation-v");
+                $(".tabelinha2 table tbody tr").remove(".generation-vi");
+                $(".tabelinha2 table tbody tr").remove(".generation-vii");
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            } else if ( geracao[i].value == "generation-ii" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-iii");
+                $(".tabelinha2 table tbody tr").remove(".generation-iv");
+                $(".tabelinha2 table tbody tr").remove(".generation-v");
+                $(".tabelinha2 table tbody tr").remove(".generation-vi");
+                $(".tabelinha2 table tbody tr").remove(".generation-vii");
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            } else if ( geracao[i].value == "generation-iii" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-iv");
+                $(".tabelinha2 table tbody tr").remove(".generation-v");
+                $(".tabelinha2 table tbody tr").remove(".generation-vi");
+                $(".tabelinha2 table tbody tr").remove(".generation-vii");
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            } else if ( geracao[i].value == "generation-iv" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-v");
+                $(".tabelinha2 table tbody tr").remove(".generation-vi");
+                $(".tabelinha2 table tbody tr").remove(".generation-vii");
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            } else if ( geracao[i].value == "generation-v" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-vi");
+                $(".tabelinha2 table tbody tr").remove(".generation-vii");
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            } else if ( geracao[i].value == "generation-vi" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-vii");
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            } else if ( geracao[i].value == "generation-vii" ) {
+                $(".tabelinha2 table tbody tr").remove(".generation-viii");
+                $(".tabelinha2 table tbody tr").remove(".generation-ix");
+            }
+        }
+
+    }
+});
+
+function ordenarTabela() {
+
+    const asc = true;  // ordem: ascendente ou descendente
+    const index = 0;    // coluna pela qual se quer ordenar
+    const tabela = document.getElementById("listaAtaques");
+    
+    const arr = Array.from(tabela.querySelectorAll("tbody tr"));
+    
+    arr.sort((a, b) => {
+      const a_val = a.children[index].innerText;
+      const b_val = b.children[index].innerText;
+      return (asc) ? a_val.localeCompare(b_val, undefined, {'numeric': true}) : b_val.localeCompare(a_val, undefined, {'numeric': true});
+    })
+    arr.forEach(elem => {
+      tabela.appendChild(elem)
+    });
 }
 
 

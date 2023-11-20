@@ -20,7 +20,7 @@
 
     <ul class="nav nav-underline mt-3 ms-4">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Filtro</a>
+            <a class="nav-link" href="index.html">Filtro</a>
         </li>
         <li class="nav-item dropdown">
             <button class="btn btn-white dropdown toggle" type="button" data-bs-toggle="dropdown">
@@ -32,7 +32,7 @@
                 </li>
             </ul>
         </li>
-      </ul>
+    </ul>
 
     <div class="container-fluid mostrarPokemon">
         <div class="row">
@@ -104,18 +104,102 @@
             </div>
             <div class="col-sm-6 p-2 p-sm-5 evolucoes mt-5">
                 <h1>Evoluções</h1>
-                <div class="d-flex flex-row">
+                <div class="d-flex flex-row mt-5">
                     <img src="" alt="" id="miniPokemon1" class="me-2 ms-2">
-                    <a id="seta1" class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic" href=""></a>
+                    <a id="seta1"
+                        class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic"
+                        href=""></a>
                     <img src="" alt="" id="miniPokemon2" class="me-2 ms-2">
-                    <a id="seta2" class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic" href=""></a>
+                    <a id="seta2"
+                        class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic"
+                        href=""></a>
                     <img src="" alt="" id="miniPokemon3" class="me-2 ms-2">
-                    <a id="seta3" class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic" href=""></a>
+                    <a id="seta3"
+                        class="text-capitalize link-offset-2 link-underline link-underline-opacity-25 fst-italic"
+                        href=""></a>
                 </div>
-                <div class="container tabelinha2">
+                <div class="accordion accordion-flush mt-5" id="filtroAtaques">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#geracoes2" aria-expanded="false" aria-controls="geracoes2">
+                                Gerações
+                            </button>
+                        </h2>
+                        <div id="geracoes2" class="accordion-collapse collapse">
+                            <div class="accordion-body">
+                                <form action="" class="d-flex">
+                                    <div class="list-group list-group-flush">
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-i" value="generation-i">
+                                                <label class="form-check-label ms-3" for="generation-i">Generation
+                                                    I</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-ii" value="generation-ii">
+                                                <label class="form-check-label ms-3" for="generation-i">Generation
+                                                    II</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-iii" value="generation-iii">
+                                                <label class="form-check-label ms-3" for="generation-iii">Generation
+                                                    III</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-iv" value="generation-iv">
+                                                <label class="form-check-label ms-3" for="generation-iv">Generation
+                                                    IV</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-v" value="generation-v">
+                                                <label class="form-check-label ms-3" for="generation-v">Generation
+                                                    V</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-vi" value="generation-vi">
+                                                <label class="form-check-label ms-3" for="generation-vi">Generation
+                                                    VI</label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <div class="form-check">
+                                                <input type="radio" name="generations" class="form-check-input"
+                                                    id="generation-vii" value="generation-vii">
+                                                <label class="form-check-label ms-3" for="generation-vii">Generation
+                                                    VII</label>
+                                            </div>
+                                        </li>
+                                    </div>
+                                </form>
+                                <div class="d-grid gap-2 col-sm-3">
+                                    <button class="btn btn-primary mt-3" id="botao_filtrar_ataques">Filtrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container tabelinha2 mt-5" id="tabelinha2">
                     <table class="table table-borderless">
                         <thead>
                             <tr>
+                                <th>Level</th>
                                 <th>Type</th>
                                 <th>Moves</th>
                                 <th>Power</th>
@@ -124,7 +208,6 @@
                             </tr>
                         </thead>
                         <tbody id="listaAtaques" class="tbody">
-    
                         </tbody>
                     </table>
                 </div>
@@ -133,12 +216,13 @@
     </div>
 
     <div class="container loading text-center">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif" class="rounded mx-auto d-block" alt="">
-        <div class="progress mt-3" role="progressbar" aria-label="Animated striped example"
-        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-        <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif"
+            class="rounded mx-auto d-block" alt="">
+        <div class="progress mt-3" role="progressbar" aria-label="Animated striped example" aria-valuenow="75"
+            aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning">
+            </div>
         </div>
-    </div>
     </div>
 
     <script src="script2.js"></script>
