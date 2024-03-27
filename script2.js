@@ -58,8 +58,8 @@ if (!modo_noturno) {
 
         setTimeout( function(){ordenarTabela();}, 5000);
 
-        $(".icone-um").attr("src", "brilho-do-sol.png");
-        $(".icone-dois").attr("src", "modo-noturno.png");
+        $(".icone-um").attr("src", "img/brilho-do-sol.png");
+        $(".icone-dois").attr("src", "img/modo-noturno.png");
 
     } else {
 
@@ -78,8 +78,8 @@ if (!modo_noturno) {
         $("table tbody tr td").addClass("texto-claro");
         $("table thead tr th").addClass("background-noturno").addClass("texto-claro"); ordenarTabela();}, 5000);
 
-        $(".icone-um").attr("src", "modo-noturno2.png");
-        $(".icone-dois").attr("src", "brilho-do-sol.png");
+        $(".icone-um").attr("src", "img/modo-noturno2.png");
+        $(".icone-dois").attr("src", "img/brilho-do-sol.png");
     }
 }
 
@@ -103,8 +103,8 @@ $(".modo-noturno").click(function(){
         $("table tbody tr td").removeClass("texto-claro");
         $("table thead tr th").removeClass("background-noturno").removeClass("texto-claro");
 
-        $(".icone-um").attr("src", "brilho-do-sol.png");
-        $(".icone-dois").attr("src", "modo-noturno.png");
+        $(".icone-um").attr("src", "img/brilho-do-sol.png");
+        $(".icone-dois").attr("src", "img/modo-noturno.png");
 
         modo_noturno = "claro";
         localStorage.modo_noturno = modo_noturno;
@@ -125,8 +125,8 @@ $(".modo-noturno").click(function(){
         $("table tbody tr td").addClass("texto-claro");
         $("table thead tr th").addClass("background-noturno").addClass("texto-claro");
 
-        $(".icone-um").attr("src", "modo-noturno2.png");
-        $(".icone-dois").attr("src", "brilho-do-sol.png");
+        $(".icone-um").attr("src", "img/modo-noturno2.png");
+        $(".icone-dois").attr("src", "img/brilho-do-sol.png");
 
         modo_noturno = "noturno";
         localStorage.modo_noturno = modo_noturno;

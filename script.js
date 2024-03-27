@@ -51,8 +51,8 @@ if (!modo_noturno) {
         $("#listaPokemons tr td").removeClass("background-noturno");
         $("#listaPokemons tr td p").removeClass("texto-claro");
 
-        $(".icone-um").attr("src", "brilho-do-sol.png");
-        $(".icone-dois").attr("src", "modo-noturno.png");
+        $(".icone-um").attr("src", "img/brilho-do-sol.png");
+        $(".icone-dois").attr("src", "img/modo-noturno.png");
 
     } else {
 
@@ -67,8 +67,8 @@ if (!modo_noturno) {
         $("#listaPokemons tr td").addClass("background-noturno");
         $("#listaPokemons tr td p").addClass("texto-claro");
 
-        $(".icone-um").attr("src", "modo-noturno2.png");
-        $(".icone-dois").attr("src", "brilho-do-sol.png");
+        $(".icone-um").attr("src", "img/modo-noturno2.png");
+        $(".icone-dois").attr("src", "img/brilho-do-sol.png");
     }
 }
 
@@ -294,8 +294,8 @@ $(".modo-noturno").click(function(){
         $("#listaPokemons tr td").removeClass("background-noturno");
         $("#listaPokemons tr td p").removeClass("texto-claro");
 
-        $(".icone-um").attr("src", "brilho-do-sol.png");
-        $(".icone-dois").attr("src", "modo-noturno.png");
+        $(".icone-um").attr("src", "img/brilho-do-sol.png");
+        $(".icone-dois").attr("src", "img/modo-noturno.png");
 
         modo_noturno = "claro";
         localStorage.modo_noturno = modo_noturno;
@@ -313,8 +313,8 @@ $(".modo-noturno").click(function(){
         $("#listaPokemons tr td").addClass("background-noturno");
         $("#listaPokemons tr td p").addClass("texto-claro");
 
-        $(".icone-um").attr("src", "modo-noturno2.png");
-        $(".icone-dois").attr("src", "brilho-do-sol.png");
+        $(".icone-um").attr("src", "img/modo-noturno2.png");
+        $(".icone-dois").attr("src", "img/brilho-do-sol.png");
 
         modo_noturno = "noturno";
         localStorage.modo_noturno = modo_noturno;
