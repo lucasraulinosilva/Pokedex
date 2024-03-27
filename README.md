@@ -3,5 +3,6 @@ Uma Pokédex web em desenvolvimento, focada em consultas rápidas
 # :hammer: Funcionalidades do projeto
 - `Filtrar`: Filtrar pokémons por geração e por tipo
 - `Pesquisa`: Pesquisar pokémons filtrados
+- `Visualização`: Visualizar status, tipos, ataques e linha evolutiva do pokémon selecionado
 # 📁 Acesso ao projeto
 https://raulinols.github.io/Pokedex/
