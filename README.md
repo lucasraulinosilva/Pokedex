@@ -5,4 +5,4 @@ Uma Pokédex web em desenvolvimento, focada em consultas rápidas
 - `Pesquisa`: Pesquisar pokémons filtrados
 - `Visualização`: Visualizar status, tipos, ataques e linha evolutiva do pokémon selecionado
 # 📁 Acesso ao projeto
-https://raulinols.github.io/Pokedex/
+https://raulinols.github.io/Pokedex/https://lucasraulinosilva.github.io/Pokedex/
