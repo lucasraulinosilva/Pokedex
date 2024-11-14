@@ -19,4 +19,4 @@ Este projeto é uma aplicação interativa de Pokedex feita utilizando **JavaScr
 - Exibição de informações em tempo real, com base na busca do usuário.
 
 ## Como Usar
-Basta acessar o site, e realizar a pesquisa utilizando o filtro.
+Basta acessar o site, e realizar a pesquisa utilizando os filtros.
